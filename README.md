@@ -229,7 +229,3 @@ ChainCV aims to become the **standard for blockchain-verified resumes and profes
 
 Strong-Bee
 GitHub: [https://github.com/Strong-Bee](https://github.com/Strong-Bee)
-
-```
-
-```
