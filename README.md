@@ -6,6 +6,12 @@ The goal of ChainCV is to prevent resume fraud and build trust in the hiring pro
 
 ---
 
+## 📸 Preview
+
+![ChainCV Demo](./public/demo.png)
+
+---
+
 ## 🚀 Features
 
 - Resume Builder
@@ -51,7 +57,6 @@ This allows companies to:
 ## 🏗 Architecture
 
 ChainCV uses a hybrid Web2 + Web3 architecture.
-
 ```
 
 User → ChainCV Platform → Database → Blockchain → Verification
@@ -71,19 +76,16 @@ Components:
 ## 🛠 Tech Stack
 
 ### Frontend
-
 - Next.js
 - TypeScript
 - TailwindCSS
 
 ### Backend
-
 - Node.js
 - Prisma ORM
 - PostgreSQL
 
 ### Web3
-
 - Polygon Network
 - Solidity Smart Contracts
 - IPFS Storage
@@ -110,7 +112,7 @@ Chain-CV
 ├ README.md
 └ tsconfig.json
 
-```
+````
 
 ---
 
@@ -120,7 +122,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Strong-Bee/Chain-CV.git
-```
+````
 
 Enter project folder:
 
