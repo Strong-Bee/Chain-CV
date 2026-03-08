@@ -1,4 +1,3 @@
-```markdown
 # ChainCV
 
 ChainCV is a Web3 resume platform that allows professionals to create **blockchain-verified resumes and credentials**.
@@ -111,7 +110,7 @@ Chain-CV
 ├ README.md
 └ tsconfig.json
 
-````
+```
 
 ---
 
@@ -121,7 +120,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Strong-Bee/Chain-CV.git
-````
+```
 
 Enter project folder:
 
@@ -230,5 +229,7 @@ ChainCV aims to become the **standard for blockchain-verified resumes and profes
 
 Strong-Bee
 GitHub: [https://github.com/Strong-Bee](https://github.com/Strong-Bee)
+
+```
 
 ```
