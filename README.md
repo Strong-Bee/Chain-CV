@@ -8,7 +8,7 @@ The goal of ChainCV is to prevent resume fraud and build trust in the hiring pro
 
 ## 📸 Preview
 
-![ChainCV Demo](public/demo.png)
+![ChainCV Demo](public/deepseek_html_20260308_7cc722.png)
 
 ---
 
