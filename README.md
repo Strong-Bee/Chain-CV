@@ -1,360 +1,96 @@
 # ChainCV
 
-<div align="center">
-  <img src="public/deepseek_html_20260308_7cc722.png" alt="ChainCV Platform Preview" width="800" />
-  
-  <p align="center">
-    <strong>Blockchain-Verified Resume Platform for the Modern Workforce</strong>
-  </p>
+**A professional profile platform designed around verifiable resume integrity.**
 
-  <p align="center">
-    <a href="#features">Features</a> •
-    <a href="#problem--solution">Problem & Solution</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#installation">Installation</a> •
-    <a href="#contributing">Contributing</a>
-  </p>
-  
-  <p align="center">
-    <img src="https://img.shields.io/badge/Next.js-13-black?style=flat-square&logo=next.js" alt="Next.js" />
-    <img src="https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript" alt="TypeScript" />
-    <img src="https://img.shields.io/badge/Solidity-0.8-363636?style=flat-square&logo=solidity" alt="Solidity" />
-    <img src="https://img.shields.io/badge/Polygon-POS-8247E5?style=flat-square&logo=polygon" alt="Polygon" />
-    <img src="https://img.shields.io/badge/IPFS-Storage-65C2CB?style=flat-square&logo=ipfs" alt="IPFS" />
-  </p>
-</div>
+ChainCV is an early-stage Next.js application exploring how cryptographic fingerprints can help candidates and recruiters detect changes to a resume snapshot. The current repository contains the web foundation and a product landing page. Blockchain anchoring, IPFS persistence, authentication, recruiter workflows, and credential issuance must be implemented and configured before they can be considered available.
 
----
+## Current implementation status
 
-## 📋 Overview
+| Area | Status |
+| --- | --- |
+| Next.js App Router foundation | Implemented |
+| Responsive ChainCV landing page | Implemented |
+| Application metadata | Implemented |
+| Resume builder and profile persistence | Not implemented |
+| Authentication and authorization | Not implemented |
+| Cryptographic resume fingerprint API | Not implemented |
+| Smart contract deployment and verification | Not implemented |
+| IPFS upload and retrieval | Not implemented |
+| Recruiter dashboard and candidate search | Not implemented |
 
-ChainCV is a next-generation resume platform that leverages blockchain technology to create **tamper-proof, verifiable professional credentials**. By storing cryptographic hashes of resume data on the Polygon network, we enable instant verification of candidate qualifications while eliminating resume fraud.
+Do not use the demo profile on the landing page as a real user record or as evidence of a blockchain transaction.
 
-### Key Benefits
+## Technology
 
-- ✅ **Instant Verification**: Verify credentials in seconds, not days
-- 🔒 **Tamper-Proof**: Blockchain ensures data integrity
-- 🌐 **Decentralized Storage**: IPFS for permanent, distributed resume storage
-- 👔 **Recruiter Dashboard**: Streamlined candidate verification workflow
+- Next.js 16
+- React 19
+- TypeScript 5
+- Tailwind CSS 4
+- ESLint 9
 
----
+The dependencies currently declared in `package.json` are the source of truth for the implemented application. The architecture may later add a database, authentication provider, EVM tooling, and decentralized storage after their security and operational requirements are defined.
 
-## ✨ Features
+## Requirements
 
-### For Professionals
+- Node.js 20.9 or later (use a currently supported Node.js LTS release)
+- npm
 
-- **Interactive Resume Builder**: Create professional resumes with real-time preview
-- **Blockchain Verification**: Generate and store resume hash on Polygon network
-- **Public Profile Page**: Share your verified resume with a unique URL
-- **Skill Badges**: Earn and display verified skill credentials
-- **Credential Management**: Add and manage education, work experience, and certificates
+## Run locally
 
-### For Recruiters
-
-- **Verification Dashboard**: Review and verify candidate credentials
-- **Instant Validation**: Check resume authenticity against blockchain records
-- **Candidate Search**: Find verified professionals by skills and credentials
-- **Verification History**: Track all verification requests and results
-
-### Technical Features
-
-- **IPFS Integration**: Decentralized storage for resume documents
-- **Smart Contract Verification**: On-chain hash verification system
-- **Hash Validation**: Verify resume integrity through cryptographic hashing
-- **Multi-Network Support**: Deployed on Polygon with easy migration to other EVM chains
-
----
-
-## 🎯 Problem & Solution
-
-### The Problem
-
-Traditional resumes face critical challenges in the hiring process:
-
-- **Fraud Prevalence**: 85% of employers catch lies on resumes
-- **Manual Verification**: Companies spend 3-5 days verifying credentials
-- **Inconsistent Formats**: No standardized way to verify professional history
-- **Outdated Information**: No mechanism to ensure resume accuracy
-
-### Our Solution
-
-ChainCV addresses these challenges through blockchain technology:
-
-```
-┌─────────────┐    ┌──────────────┐    ┌─────────────┐    ┌─────────────┐
-│   Create    │ → │    Store     │ → │   Verify    │ → │    Trust    │
-│   Resume    │    │   on IPFS    │    │   on Chain  │    │   Result    │
-└─────────────┘    └──────────────┘    └─────────────┘    └─────────────┘
+```bash
+git clone https://github.com/Strong-Bee/Chain-CV.git
+cd Chain-CV
+npm install
+npm run dev
 ```
 
-1. **Creation**: Users build resumes through our intuitive interface
-2. **Storage**: Resume data is stored on IPFS with content addressing
-3. **Verification**: Cryptographic hash is stored on Polygon blockchain
-4. **Trust**: Employers verify authenticity instantly without intermediaries
+Open [http://localhost:3000](http://localhost:3000).
 
----
+## Available scripts
 
-## 🏗 Architecture
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server |
+| `npm run build` | Create a production build |
+| `npm run start` | Start the production server |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | Run the TypeScript compiler without emitting files |
 
-ChainCV employs a hybrid architecture combining Web2 efficiency with Web3 security:
+## Configuration
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                     Frontend (Next.js)                   │
-├─────────────────────────────────────────────────────────┤
-│                                                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
-│  │ Resume       │  │ Profile      │  │ Recruiter    │  │
-│  │ Builder UI   │  │ Pages        │  │ Dashboard    │  │
-│  └──────────────┘  └──────────────┘  └──────────────┘  │
-│                                                          │
-├─────────────────────────────────────────────────────────┤
-│                    Backend Services                       │
-├─────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
-│  │ REST API     │  │ Prisma ORM   │  │ Smart        │  │
-│  │              │  │              │  │ Contracts    │  │
-│  └──────────────┘  └──────────────┘  └──────────────┘  │
-│                                                          │
-├─────────────────────────────────────────────────────────┤
-│                    Data Layer                            │
-├─────────────────────────────────────────────────────────┤
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  │
-│  │ PostgreSQL   │  │ Polygon      │  │ IPFS         │  │
-│  │ Database     │  │ Blockchain   │  │ Storage      │  │
-│  └──────────────┘  └──────────────┘  └──────────────┘  │
-│                                                          │
-└─────────────────────────────────────────────────────────┘
-```
+The landing page works without external services. Set `NEXT_PUBLIC_APP_URL` to the canonical public URL when deploying so metadata uses the correct origin.
 
-### Core Components
+Never put private keys, database credentials, IPFS secrets, or server-side API tokens in variables prefixed with `NEXT_PUBLIC_`. Do not commit real `.env` files.
 
-- **Web Layer**: Next.js application with server-side rendering
-- **API Layer**: RESTful endpoints for resume management
-- **Database Layer**: PostgreSQL for user data and metadata
-- **Blockchain Layer**: Smart contracts for hash verification
-- **Storage Layer**: IPFS for decentralized document storage
+## Security and verification principles
 
----
+When implementing resume verification:
 
-## 🛠 Tech Stack
+1. Keep original resume documents and personal information off-chain by default.
+2. Store only the minimum commitment needed for integrity verification on-chain; avoid publishing personal data or predictable low-entropy identifiers.
+3. Use a canonical, versioned serialization format before hashing. A hash is only meaningful when the exact input and normalization rules are defined.
+4. Treat a matching hash as evidence that bytes or canonical data match—not proof that the resume's claims are true.
+5. Verify wallet signatures and authorization on the server or contract boundary. Never trust client-submitted identity or ownership claims.
+6. Keep signing keys and provider credentials in managed server-side secrets. Never expose a wallet private key to browser code.
+7. Add consent, retention, deletion, rate limiting, and audit controls before handling real candidate data.
 
-### Frontend Development
+## Roadmap
 
-| Technology                                    | Purpose                         |
-| --------------------------------------------- | ------------------------------- |
-| [Next.js 13](https://nextjs.org/)             | React framework with App Router |
-| [TypeScript](https://www.typescriptlang.org/) | Type-safe development           |
-| [TailwindCSS](https://tailwindcss.com/)       | Utility-first styling           |
-| [Ethers.js](https://docs.ethers.org/)         | Blockchain interaction          |
+- [ ] Resume editor with versioned snapshots
+- [ ] Server-side canonicalization and cryptographic fingerprinting
+- [ ] Secure authentication and profile ownership
+- [ ] Optional encrypted/off-chain document storage
+- [ ] Smart contract anchoring and independent verification
+- [ ] Recruiter review workflow with explicit verification evidence
+- [ ] Automated tests and deployment checks
 
-### Backend & Database
+## Contributing
 
-| Technology                                | Purpose             |
-| ----------------------------------------- | ------------------- |
-| [Node.js](https://nodejs.org/)            | Runtime environment |
-| [Prisma](https://www.prisma.io/)          | Type-safe ORM       |
-| [PostgreSQL](https://www.postgresql.org/) | Primary database    |
-| [NextAuth.js](https://next-auth.js.org/)  | Authentication      |
+1. Create a feature branch from `main`.
+2. Keep changes focused and add tests for new behavior.
+3. Run `npm run lint`, `npm run type-check`, and `npm run build`.
+4. Open a pull request with a clear summary, test evidence, and any configuration changes.
 
-### Blockchain & Web3
+## License
 
-| Technology                             | Purpose                    |
-| -------------------------------------- | -------------------------- |
-| [Solidity](https://soliditylang.org/)  | Smart contract development |
-| [Polygon](https://polygon.technology/) | Layer 2 scaling solution   |
-| [IPFS](https://ipfs.tech/)             | Decentralized storage      |
-| [Hardhat](https://hardhat.org/)        | Development environment    |
-
----
-
-## 📁 Project Structure
-
-```
-Chain-CV/
-├── app/                    # Next.js 13 App Router
-│   ├── (auth)/            # Authentication routes
-│   ├── (dashboard)/       # Dashboard routes
-│   └── api/               # API routes
-├── components/            # React components
-│   ├── ui/                # Reusable UI components
-│   ├── forms/             # Form components
-│   └── blockchain/        # Web3 components
-├── contracts/             # Solidity smart contracts
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utility functions
-├── prisma/                # Database schema and migrations
-├── public/                # Static assets
-├── styles/                # Global styles
-├── types/                 # TypeScript type definitions
-├── utils/                 # Helper functions
-├── package.json           # Dependencies
-├── tsconfig.json         # TypeScript configuration
-└── README.md             # Documentation
-```
-
----
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+
-- npm or yarn
-- PostgreSQL database
-- MetaMask wallet (for blockchain features)
-- Polygon testnet MATIC (for testing)
-
-### Installation Steps
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/Strong-Bee/Chain-CV.git
-   cd Chain-CV
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-3. **Set up environment variables**
-
-   ```bash
-   cp .env.example .env
-   ```
-
-   Configure the following variables:
-
-   ```env
-   # Database
-   DATABASE_URL="postgresql://user:password@localhost:5432/chaincv"
-
-   # Blockchain
-   NEXT_PUBLIC_RPC_URL="https://polygon-mumbai.g.alchemy.com/v2/your-api-key"
-   PRIVATE_KEY="your-wallet-private-key"
-
-   # IPFS
-   IPFS_API_KEY="your-ipfs-api-key"
-   IPFS_SECRET_KEY="your-ipfs-secret-key"
-
-   # NextAuth
-   NEXTAUTH_SECRET="your-secret-key"
-   NEXTAUTH_URL="http://localhost:3000"
-   ```
-
-4. **Set up the database**
-
-   ```bash
-   npx prisma migrate dev
-   npx prisma generate
-   ```
-
-5. **Deploy smart contracts**
-
-   ```bash
-   npx hardhat run scripts/deploy.js --network polygonMumbai
-   ```
-
-6. **Run development server**
-
-   ```bash
-   npm run dev
-   ```
-
-7. **Open your browser**
-   ```
-   http://localhost:3000
-   ```
-
----
-
-## 🧪 Development Commands
-
-| Command                    | Description                     |
-| -------------------------- | ------------------------------- |
-| `npm run dev`              | Start development server        |
-| `npm run build`            | Build for production            |
-| `npm start`                | Start production server         |
-| `npm run lint`             | Run ESLint                      |
-| `npm run format`           | Format code with Prettier       |
-| `npm run type-check`       | Run TypeScript compiler check   |
-| `npm run test`             | Run tests                       |
-| `npm run deploy:contracts` | Deploy smart contracts          |
-| `npm run verify:contracts` | Verify contracts on PolygonScan |
-
----
-
-## 🤝 Contributing
-
-We welcome contributions from the community! Here's how you can help:
-
-### Contribution Process
-
-1. **Fork the repository**
-   - Click the "Fork" button at the top of this page
-
-2. **Create a feature branch**
-
-   ```bash
-   git checkout -b feature/amazing-feature
-   ```
-
-3. **Commit your changes**
-
-   ```bash
-   git commit -m 'Add amazing feature'
-   ```
-
-4. **Push to your branch**
-
-   ```bash
-   git push origin feature/amazing-feature
-   ```
-
-5. **Open a Pull Request**
-   - Provide a clear description of your changes
-   - Reference any related issues
-
-### Development Guidelines
-
-- Follow the existing code style
-- Write tests for new features
-- Update documentation as needed
-- Ensure all tests pass before submitting PR
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🌍 Vision
-
-ChainCV aims to revolutionize professional credentialing by building the **global standard for blockchain-verified identities**. We envision a future where:
-
-- **Job seekers** own and control their professional data
-- **Employers** verify credentials instantly without intermediaries
-- **Educational institutions** issue verifiable digital diplomas
-- **Skills** are portable and recognized globally
-
----
-
-## 👨‍💻 Author
-
-**Strong-Bee**
-
-- GitHub: [@Strong-Bee](https://github.com/Strong-Bee)
-- Project Link: [https://github.com/Strong-Bee/Chain-CV](https://github.com/Strong-Bee/Chain-CV)
-
----
-
-<div align="center">
-  <sub>Built with ❤️ for the future of work</sub>
-</div>
+See [LICENSE](LICENSE) if present in the repository.
