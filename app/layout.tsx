@@ -13,9 +13,6 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://chain-cv.vercel.app",
-  ),
   title: {
     default: "ChainCV — Verifiable Professional Identity",
     template: "%s | ChainCV",
